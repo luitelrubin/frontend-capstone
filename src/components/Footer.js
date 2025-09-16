@@ -2,7 +2,8 @@ import Nav from "./Nav";
 
 function Footer() {
   return (
-    <>
+    <footer>
+      <img src="images/restaurant.jpg" alt="Little lemon restaurant" />
       <div>
         <h3>Doormat Navigation</h3>
         <Nav />
@@ -17,7 +18,7 @@ function Footer() {
         </ul>
       </div>
 
-      <div>
+      <div class="footer-socials">
         <h3>Social Media Links</h3>
         <ul>
           <li>
@@ -52,7 +53,7 @@ function Footer() {
           </li>
         </ul>
       </div>
-    </>
+    </footer>
   );
 }
 
