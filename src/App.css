@@ -1,4 +1,4 @@
-/* 
+/*
 Primary1  : #49SE57
 Primary2  : #F4CE14
 Secondary1: #EDEFEE
@@ -10,6 +10,7 @@ Secondary4: #FBDAAB
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   font-family: "Karla", sans-serif;
 }
 
@@ -19,40 +20,44 @@ html {
 
 #root {
   height: calc(150vh - 50px);
-
   display: grid;
-  grid-template-areas: "header" "main" "footer";
+  grid-template-areas: ". header ." ". main ." ". footer .";
   grid-template-rows: auto 1fr auto;
-  grid-template-columns: 1fr;
-}
-body {
-  margin: 25px;
-}
-
-header {
-  grid-area: header;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  grid-template-columns: 1fr 2fr 1fr;
   gap: 2rem;
 }
+
+body {
+  margin-top: 2.5rem;
+}
+/*Header stylings*/
+header {
+  grid-area: header;
+  grid-column: 2/3;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
 header img {
+  grid-column: 2/3;
   height: 50px;
   width: auto;
+  margin-right: 2rem;
 }
 
 header nav ul {
   list-style-type: none;
   font-size: 2rem;
+  grid-column: 3/5;
 
-  display: flex;
-  justify-content: space-around;
-  text-align: center;
-  gap: 2rem;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: repeat(6, 1fr);
+  column-gap: 2rem;
+  height: 100%;
 }
 
-nav a {
+a {
   text-decoration: none;
 }
 
@@ -61,14 +66,201 @@ nav a:hover {
   cursor: pointer;
 }
 
-nav a:visited {
+a:visited {
   color: inherit;
 }
 
+/*Main stylings*/
 main {
   grid-area: main;
+  grid-column: 2/3;
+  display: grid;
+  grid-template-rows: auto auto auto auto;
+  grid-template-areas: "hero" "specials" "testimonials" "about";
+  row-gap: 2rem;
+}
+main .hero {
+  grid-area: hero;
+  background-color: #495e57;
+}
+main .hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 2fr;
 }
 
+.hero-content h1 {
+  font-family: "Markazi Text", "sheriff";
+  font-size: 64px;
+  color: #f4ce14;
+  margin-bottom: -2rem;
+  margin-top: 2rem;
+}
+
+.hero-content h2 {
+  font-family: "Markazi Text", "sheriff";
+  font-size: 40px;
+  color: #edefee;
+  margin-bottom: 1rem;
+}
+.hero-content p {
+  color: #edefee;
+  margin-bottom: 2rem;
+  width: 270px;
+  font-size: 1.6rem;
+}
+.hero-content a {
+  border-radius: 12px;
+  padding: 10px;
+  background: #f4ce14;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+.hero-content a:hover {
+  background-color: #edefee;
+  color: #333333;
+  cursor: pointer;
+}
+.hero-content img {
+  height: 275px;
+  width: auto;
+  justify-self: right;
+  background-color: #f4ce14;
+  object-fit: cover;
+  clip-path: inset(0px round 12px);
+  position: relative;
+  top: 2rem;
+}
+
+/*Specials*/
+.specials {
+  grid-area: specials;
+  display: grid;
+  grid-template-rows: 1fr 3fr;
+  row-gap: 3rem;
+}
+.specials-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.specials-header h1 {
+  color: #333333;
+  font-family: "Markazi Text", "sheriff";
+  font-size: 64px;
+}
+.specials-header a {
+  border-radius: 12px;
+  padding: 10px;
+  background: #f4ce14;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+.specials-header a:hover {
+  background-color: #495e57;
+  color: #edefee;
+  cursor: pointer;
+}
+.specials-card {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: space-between;
+  border-radius: 12px;
+  background-color: #edefee;
+  height: 100%;
+  flex: 1;
+}
+.card img {
+  width: 100%;
+  height: 175px;
+  object-fit: cover;
+  clip-path: inset(0 round 12px 12px 0 0);
+}
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2rem;
+}
+.card-header h3 {
+  font-family: "Markazi Text", "sheriff";
+  font-size: 2.4rem;
+  font-weight: bold;
+}
+
+.card-header h3:nth-child(2) {
+  color: #ee9972;
+}
+.card > p {
+  padding: 0 2rem;
+  font-size: 1.6rem;
+  color: slategray;
+}
+.card a {
+  font-weight: bold;
+  font-size: 1.6rem;
+  padding: 0 2rem 2rem;
+}
+.card a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+/*About stylings*/
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "content image";
+}
+.about-content {
+  grid-area: content;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.about-content h1 {
+  font-family: "Markazi Text", "sheriff";
+  font-size: 64px;
+  color: #333333;
+  margin-bottom: -2rem;
+}
+.about-content h2 {
+  font-family: "Markazi Text", "sheriff";
+  font-size: 40px;
+  color: slategray;
+  margin-bottom: 1rem;
+}
+.about-content p {
+  color: #333333;
+  margin-bottom: 2rem;
+  width: 100%;
+  font-size: 1.6rem;
+}
+.about-img {
+  grid-area: image;
+  position: relative;
+}
+.about-img img {
+  position: absolute;
+  width: 100%;
+  clip-path: inset(0 0 0 50% round 12px);
+  height: 300px;
+  object-fit: cover;
+  object-position: right center;
+}
+.about-img img:nth-child(1) {
+  z-index: 2;
+}
+.about-img img:nth-child(2) {
+  z-index: 1;
+  bottom: 0%;
+  right: 40%;
+}
+/*Footer stylings*/
 footer {
   grid-area: footer;
   display: grid;
