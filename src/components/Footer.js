@@ -4,12 +4,12 @@ function Footer() {
   return (
     <footer>
       <img src="images/restaurant.jpg" alt="Little lemon restaurant" />
-      <div>
+      <div className="footer-nav">
         <h3>Doormat Navigation</h3>
         <Nav />
       </div>
 
-      <div>
+      <div className="footer-contact">
         <h3>Contact</h3>
         <ul>
           <li>1234 W Michigan Avenue, Chicago, IL 60614</li>

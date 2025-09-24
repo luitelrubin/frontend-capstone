@@ -38,16 +38,16 @@ header {
   grid-template-columns: repeat(4, 1fr);
 }
 header img {
-  grid-column: 2/3;
+  grid-column: 1/2;
   height: 50px;
   width: auto;
   margin-right: 2rem;
 }
 
-header nav ul {
+header nav {
   list-style-type: none;
   font-size: 2rem;
-  grid-column: 3/5;
+  grid-column: 2/3;
 
   display: grid;
   justify-items: center;
@@ -286,16 +286,24 @@ footer h3 {
   color: #495e57; /* Your Primary2 color */
 }
 
-footer ul {
+/* footer nav {
   list-style: none;
-}
+} */
 
-footer ul li {
+.footer-nav a {
   margin-bottom: 0.5rem;
-  font-size: 2rem;
-}
+  font-size: 1.6rem;
 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.footer-contact ul {
+  list-style-type: none;
+  font-size: 1.6rem;
+}
 .footer-socials ul {
+  list-style-type: none;
   display: flex;
   flex-direction: row;
   justify-content: left;

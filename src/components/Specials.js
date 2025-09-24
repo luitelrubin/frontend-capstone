@@ -1,8 +1,8 @@
-import DishCard from "../DishCard";
+import DishCard from "./DishCard";
 
 function Specials() {
   return (
-    <div className="specials">
+    <section className="specials">
       <div className="specials-header">
         <h1>This Week's Specials</h1>
         <a href="#">Online Menu</a>
@@ -27,7 +27,7 @@ function Specials() {
           description="This comes straight from grandma's recipe book, every last ingredient has been sourced and is as authentic as can be imagined."
         />
       </div>
-    </div>
+    </section>
   );
 }
 

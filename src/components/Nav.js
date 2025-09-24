@@ -1,27 +1,19 @@
+import HomePage from "./HomePage";
+import BookingPage from "./BookingPage";
+import { Link, BrowserRouter, Routes, Route } from "react-router-dom";
 function Nav() {
   return (
-    <nav>
-      <ul>
-        <li>
-          <a href="#">Home</a>
-        </li>
-        <li>
-          <a href="#">About</a>
-        </li>
-        <li>
-          <a href="#">Menu</a>
-        </li>
-        <li>
-          <a href="#">Reservations</a>
-        </li>
-        <li>
-          <a href="#">Order&nbsp;Online</a>
-        </li>
-        <li>
-          <a href="#">Login</a>
-        </li>
-      </ul>
-    </nav>
+    <>
+      <nav>
+        {/* Home, About, Meu, Reservations, Order Online, Login */}
+        <Link to="/">Home</Link>
+        <Link to="/">About</Link>
+        <Link to="/">Menu</Link>
+        <Link to="/booking">Reservations</Link>
+        <Link to="/">Order&nbsp;Online</Link>
+        <Link to="/">Login</Link>
+      </nav>
+    </>
   );
 }
 export default Nav;

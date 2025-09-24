@@ -1,6 +1,6 @@
 function About() {
   return (
-    <div className="about">
+    <section className="about">
       <div className="about-content">
         <h1>Little Lemon</h1>
         <h2>Chicago</h2>
@@ -26,7 +26,7 @@ function About() {
           alt="owners Mario and Adrian b"
         />
       </div>
-    </div>
+    </section>
   );
 }
 
